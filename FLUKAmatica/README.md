@@ -9,8 +9,6 @@ A package to import FLUKA-generated files in Mathematica.
 * [Features](#features)
 * [Usage example](#usage-example)
 * [Installation](#installation)
-    * [Automatic installation](#automatic-installation)
-    * [Manual installation](#manual-installation)
     * [No installation](#no-installation)
 * [Documentation](#documentation)
 * [License](#license)
@@ -26,41 +24,14 @@ Check the [demo notebook](https://github.com/dih5/FLUKAmatica/blob/master/demo.n
 
 ## Installation
 
-
-### Automatic installation
-
-To install the FLUKAmatica package evaluate:
-```Mathematica
-Get["https://raw.githubusercontent.com/dih5/FLUKAmatica/master/BootstrapInstall.m"]
-```
-
-
-This method uses [MathematicaBootstrapInstaller](https://github.com/jkuczm/MathematicaBootstrapInstaller) and will also install the
-[ProjectInstaller](https://github.com/lshifr/ProjectInstaller) package if you don't have it already installed.
-
-To load the FLUKAmatica package evaluate: ``Needs["FLUKAmatica`"]``.
-
-
-### Manual installation
-
-1. Download latest released
-   [FLUKAmatica.zip](https://github.com/dih5/FLUKAmatica/releases/download/v0.1.0/FLUKAmatica.zip)
-   file.
-
-2. Extract downloaded `FLUKAmatica.zip` to any directory which is on the Mathematica `$Path`,
-   e.g. to install for the current user `FileNameJoin[{$UserBaseDirectory,"Applications"}]`,
-   for all users `FileNameJoin[{$BaseDirectory,"Applications"}]`.
-
-3. To load the package evaluate: ``Needs["FLUKAmatica`"]``.
-
-
 ### No installation
 
 To use package directly from the Web, without installation, evaluate:
 ```Mathematica
-Get["https://raw.githubusercontent.com/dih5/FLUKAmatica/master/FLUKAmatica/FLUKAmatica.m"]
+Get["https://raw.githubusercontent.com/Dih5/FLUKAmatica/master/FLUKAmatica/FLUKAmatica/FLUKAmatica.m"]
 ```
 
+Yes, the only pre-release installation method is the "no-installation" method. 
 
 ## Documentation
 
@@ -69,7 +40,7 @@ This application does not include Mathematica Documentation Center compatible do
 Some help is available by means of usage message. Try for example
 ```Mathematica
 ?ImportSingleBDX
-```Mathematica
+```
 
 
 
