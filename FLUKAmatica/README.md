@@ -34,6 +34,7 @@ To install the FLUKAmatica package evaluate:
 Get["https://raw.githubusercontent.com/dih5/FLUKAmatica/master/BootstrapInstall.m"]
 ```
 
+
 This method uses [MathematicaBootstrapInstaller](https://github.com/jkuczm/MathematicaBootstrapInstaller) and will also install the
 [ProjectInstaller](https://github.com/lshifr/ProjectInstaller) package if you don't have it already installed.
 
