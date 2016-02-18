@@ -19,7 +19,7 @@ Support for USRTRACK and singly-differential USRBDX detectors.
 Partial support for doubly-differential USRBDX detectors.
 
 ## Usage example
-Check the [demo notebook](https://github.com/dih5/FLUKAmatica/master/FLUKAmatica/demo.nb).
+Check the [demo notebook](https://raw.githubusercontent.com/Dih5/FLUKAmatica/master/FLUKAmatica/demo.nb.
 
 ## Installation
 
