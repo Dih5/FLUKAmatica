@@ -1,0 +1,278 @@
+#!/usr/local/flair/flair
+# FLUKA Project file
+Version: 2
+Title: 
+Input: demo.inp
+Submit: *Default
+Tabs: 0.1 0.32 0.56 0.81 1.0
+Page: Run
+DefMain: True
+LinkPrg: lfluka
+F77bound: True
+F77dline: False
+
+# Run information
+Run: <default>
+	Prev:     0
+	Last:     3
+	Status:   3
+	Pid:      0
+	StartRun: 1455791692
+
+	# USRxxx data file: demo_21.bnx
+	Data: \I_\U.\e
+		Unit: 21
+		Type: x
+		Rule: +,\I\d\d\d_fort\.\U
+		Rule: +,\I\d\d\d_ftn\.\U
+	End
+
+	# USRxxx data file: demo_22.bnx
+	Data: \I_\U.\e
+		Unit: 22
+		Type: x
+		Rule: +,\I\d\d\d_fort\.\U
+		Rule: +,\I\d\d\d_ftn\.\U
+	End
+
+	# USRxxx data file: demo_23.trk
+	Data: \I_\U.\e
+		Unit: 23
+		Type: t
+		Rule: +,\I\d\d\d_fort\.\U
+		Rule: +,\I\d\d\d_ftn\.\U
+	End
+End
+
+# Geometry Information
+Geometry:
+End
+
+# Pet
+Pet: pet
+End
+
+# Geometry plot "Geometry"
+Plot: demo_geometry
+	Format: .eps
+	Type:   Geometry
+	labels: 0
+	cbcolors: 0
+	title: Geometry
+	extends: 100 100
+	grid: 0
+	cbpalette: FLUKA
+	coord: U-V
+	x2log: 0
+	index: 0
+	subtype: Geometry
+	y2log: 0
+	boundaries: 0
+	ztics: 0
+	cblog: 0
+	origin: 0 0 0
+	cbround: 0
+	ylog: 0
+	zlog: 0
+	y2tics: 0
+	cbtics: 0
+	cpd: 0
+	xlog: 0
+	basisu: 1 0 0
+	basisv: 0 1 0
+	x2tics: 0
+End
+
+# USR-1D plot "BDXdoub demo"
+Plot: demo_21_plot
+	Format: .eps
+	Type:   USR-1D
+	lw.1: 2
+	lw.0: 2
+	cbcolors: 0
+	title: BDXdoub demo
+	show.2: 1
+	show.1: 1
+	show.0: 1
+	pt.2: 0
+	grid: 0
+	cbpalette: FLUKA
+	lw.2: 1
+	x2log: 0
+	with.0: histerror
+	ndetectors: 3
+	index: 0
+	block.2: 0
+	block.0: 0
+	block.1: 0
+	y2log: 0
+	xlabel: Energy (GeV)
+	key.2: 1
+	key.0: 1
+	key.1: 1
+	file.2: demo_22_tab.lis
+	ztics: 0
+	y.2: 0
+	cblog: 0
+	cbround: 0
+	cbtics: 0
+	ylog: 0
+	name.1: Energy Fluence (GeV/cm^2/GeV/prim)
+	name.0: Fluence (#/cm^2/GeV/prim)
+	name.2: Fluence (singly diff scoring)
+	zlog: 0
+	det.0: 0
+	det.1: 2
+	det.2: 0
+	lc.1: blue
+	lc.0: red
+	x.1: 2
+	x.0: 2
+	y2tics: 0
+	pt.0: 0
+	pt.1: 0
+	y.0: 0
+	y.1: 0
+	file.0: demo_21_tab.lis
+	file.1: demo_21_tab.lis
+	cpd: 0
+	xlog: 0
+	with.1: histerror
+	with.2: histogram
+	x2tics: 0
+	ps.1: 1
+	ps.0: 1
+	ps.2: 1
+End
+
+# USR-1D plot "BDXsingdemo"
+Plot: demo_22_plot
+	Format: .eps
+	Type:   USR-1D
+	lw.1: 2
+	lw.0: 2
+	cbcolors: 0
+	title: BDXsingdemo
+	show.1: 1
+	show.0: 1
+	grid: 0
+	cbpalette: FLUKA
+	x2log: 0
+	with.0: histerror
+	with.1: histerror
+	index: 0
+	block.0: 0
+	block.1: 0
+	y2log: 0
+	xlabel: Energy (GeV)
+	key.0: 1
+	key.1: 1
+	commands:
+#NOTE: Distributions in angles (and not in energy) are treated like doubly differential and can not be directly plotted from flair.
+	ztics: 0
+	cblog: 0
+	cbround: 0
+	cbtics: 0
+	ylog: 1
+	name.1: Detector 1
+	name.0: Detector 1
+	zlog: 0
+	det.0: 0
+	det.1: 1
+	lc.1: blue
+	lc.0: red
+	x.1: 2
+	x.0: 2
+	y2tics: 0
+	pt.0: 0
+	pt.1: 0
+	y.0: 0
+	y.1: 0
+	file.0: demo_22_tab.lis
+	file.1: demo_22_tab.lis
+	cpd: 0
+	xlog: 0
+	ndetectors: 2
+	x2tics: 0
+	ps.1: 1
+	ps.0: 1
+End
+
+# USR-1D plot "USRTRACK demo"
+Plot: demo_23_plot
+	Format: .eps
+	Type:   USR-1D
+	lw.1: 2
+	lw.0: 2
+	cbcolors: 0
+	title: USRTRACK demo
+	show.1: 1
+	show.0: 1
+	grid: 0
+	name.1: Energy Fluence (GeV/cm^2/GeV/prim)
+	cbpalette: FLUKA
+	x2log: 0
+	with.0: histerror
+	ndetectors: 2
+	index: 0
+	block.0: 0
+	block.1: 0
+	y2log: 0
+	xlabel: Energy (GeV)
+	key.0: 1
+	key.1: 1
+	cbtics: 0
+	ztics: 0
+	cblog: 0
+	cbround: 0
+	ylog: 1
+	name.0: Fluence (#/cm^2/GeV/prim)
+	zlog: 0
+	det.0: 0
+	det.1: 1
+	lc.1: blue
+	lc.0: red
+	x.1: 2
+	x.0: 2
+	y2tics: 0
+	pt.0: 0
+	pt.1: 0
+	y.0: 0
+	y.1: 0
+	file.0: demo_23_tab.lis
+	file.1: demo_23_tab.lis
+	cpd: 0
+	xlog: 0
+	with.1: histerror
+	x2tics: 0
+	ps.1: 1
+	ps.0: 1
+End
+
+# USR-2D plot "BDX2D demo"
+Plot: demo_plot05
+	Format: .eps
+	Type:   USR-2D
+	cbcolors: 0
+	title: BDX2D demo
+	ylabel: Angle (sr)
+	grid: 0
+	datafile: demo_21_tab.lis
+	cbpalette: FLUKA
+	y2tics: 0
+	x2log: 0
+	index: 0
+	y2log: 0
+	ztics: 1
+	cblog: 1
+	cbround: 0
+	ylog: 0
+	zlog: 1
+	cbtics: 1
+	det: 3
+	xlabel: Energy (GeV)
+	cpd: 0
+	xlog: 0
+	zlabel: Doubly differential fluence (#/GeV/sr/cm^2/prim)
+	x2tics: 0
+End

@@ -1,0 +1,8 @@
+Resources[
+    Version[1],
+    ExecutionBuildCommand["<<FLUKAmatica`"],
+    Paclet[
+        PacletFolder["FLUKAmatica"],
+        FunctionPaclet[False]
+    ]
+]

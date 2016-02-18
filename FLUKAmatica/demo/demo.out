@@ -1,0 +1,39 @@
+Dir: /home/guillehg/fluka/demo
+Cmd: /usr/bin/nohup /usr/local/fluka/flutil/rfluka -M 3 demo
+/usr/bin/nohup: no se tendrá en cuenta la entrada
+$TARGET_MACHINE = Linux
+$FLUPRO = /usr/local/fluka
+
+Initial seed copied from /usr/local/fluka
+Running fluka in /home/guillehg/fluka/demo/fluka_28819
+
+======================= Running FLUKA for cycle # 1 =======================
+
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated
+     Moving fort.21 to /home/guillehg/fluka/demo/demo001_fort.21
+     Moving fort.22 to /home/guillehg/fluka/demo/demo001_fort.22
+     Moving fort.23 to /home/guillehg/fluka/demo/demo001_fort.23
+
+======================= Running FLUKA for cycle # 2 =======================
+
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated
+     Moving fort.21 to /home/guillehg/fluka/demo/demo002_fort.21
+     Moving fort.22 to /home/guillehg/fluka/demo/demo002_fort.22
+     Moving fort.23 to /home/guillehg/fluka/demo/demo002_fort.23
+
+======================= Running FLUKA for cycle # 3 =======================
+
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated
+     Moving fort.21 to /home/guillehg/fluka/demo/demo003_fort.21
+     Moving fort.22 to /home/guillehg/fluka/demo/demo003_fort.22
+     Moving fort.23 to /home/guillehg/fluka/demo/demo003_fort.23
+End of FLUKA run
