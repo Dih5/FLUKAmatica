@@ -45,7 +45,7 @@ Some help is available by means of usage message. Try for example
 ## License
 
 This package is released under
-[The MIT License](https://raw.githubusercontent.com/Dih5/FLUKAmatica/master/LICENSE.txt).
+[The MIT License](https://raw.githubusercontent.com/Dih5/FLUKAmatica/master/LICENSE).
 
 
 
