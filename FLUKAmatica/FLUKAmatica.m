@@ -45,7 +45,7 @@ GetDetectorIntegratedTable[det_] :=
 GetDetectorIntegratedTable::usage = 
   "Gets the angle-integrated table from a detector";
   
-  GetDetectorDoubleDiffTables[det_] := 
+GetDetectorDoubleDiffTables[det_] := 
  Function[t, DeleteCases[ImportString[t, "Table"], {}]] /@ 
   DeleteCases[
     StringSplit[det, 
@@ -63,32 +63,25 @@ GetDetectorAngularMesh[det_] :=
 GetDetectorAngularMesh::usage = 
   "Gets the angular mesh from a detector";
 
-GetDoubleHistogramData[
-  det_] := {GetDetectorAngularMesh[det], 
+
+
+FixDoubleTables[dTables_] := 
+ Block[{new, l}, new = dTables; l = Length[dTables[[-2]]]; 
+  new[[-1]] = new[[-1, 1 ;; l]]; new]
+  FixDoubleTables::usage="Since _tab.lis files add some upper limits after the last element, they have to removed with this function.
+  Check the bug or feature discuss at:
+  http://www.fluka.org/web_archive/earchive/new-fluka-discuss/7671.html"
+
+GetDoubleHistogramData[det_] := {GetDetectorAngularMesh[det], 
    GetDetectorIntegratedTable[det][[All, {1, 2}]]}~Join~
-  Transpose[
-   GetDetectorDoubleDiffTables[det][[All, 1 ;; -2, {3, 4}]], {2, 3, 1}]
+  Transpose[FixDoubleTables[GetDetectorDoubleDiffTables[det]][[All,1 ;; -2, {3, 4}]], {2, 3, 1}]
 GetDoubleHistogramData::usage = 
   "Reads a detector as a double histogram, a list of: angle mesh, \
 energy mesh, data (indexed by angle, energy), data's relative error \
 (in %)";
-
-FIXBUG[dTables_] := 
- Block[{new, l}, new = dTables; l = Length[dTables[[-2]]]; 
-  new[[-1]] = new[[-1, 1 ;; l]]; new]
-
-FIXEDGetDoubleHistogramData[
-  det_] := {GetDetectorAngularMesh[det], 
-   GetDetectorIntegratedTable[det][[All, {1, 2}]]}~Join~
-  Transpose[
-   FIXBUG[GetDetectorDoubleDiffTables[det]][[All, 
-    1 ;; -2, {3, 4}]], {2, 3, 1}]
     
 
-ImportDoubleBDX[file_]:=FIXEDGetDoubleHistogramData/@TabLisBreakDetectors[file]
-
-
-
+ImportDoubleBDX[file_]:=GetDoubleHistogramData/@TabLisBreakDetectors[file]
 
 
      
@@ -106,7 +99,9 @@ ImportSingleBDX =     (DeleteCases[
      "# Detector.*"]], _?(StringMatchQ[#, 
        RegularExpression["\\s*"]] &)] &
      
-     
+
+
+(*DEPRECATED: all following functions must be adapted to the new double differential format*)
      
      IntegrateAngleForEnergy[t_, En_, nextEn_] := 
  Module[{value, error, t2},
