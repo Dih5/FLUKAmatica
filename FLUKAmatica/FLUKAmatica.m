@@ -5,19 +5,19 @@ BeginPackage["FLUKAmatica`"]
 (* Exported symbols added here with SymbolName::usage *) 
 
 
-ImportSingleBDX::usage = "ImportSingleBDX[data,i] returns a list of data \
+ImportSingleBDX::usage = "ImportSingleBDX[tabLisString] returns a list of detector data, each in the form \
 {{energyLow, energyHi, magnitude, relError},...} from a Flair-produced \
-file *_tab.lis which has been imported as string in 'data'. Physical meaning: magnitude * \
-(1\[PlusMinus]relError) is the he magnitude per energy in \
-[energyLow, energyHi]. Note the magnitude is usually per area per primary."
+file *_tab.lis which has been imported as a string.
+Physical meaning: magnitude * (1\[PlusMinus]relError%) is the mean magnitude (e.g., fluence) per GeV in \
+[energyLow, energyHi]. Note the magnitude is usually per [effective] area per primary."
 
-ImportDoubleBDX::usage = "DEPRECATED: ImportDoubleBDX[tabLisString] returns a list of data \
-{angleMesh,energyMesh,data,...} from a Flair-produced \
-file *_tab.lis which has been imported as string. Physical meaning: magnitude * \
-(1\[PlusMinus]relError) is the magnitude per energy per solid angle in \
-[energyLow, energyHi] and in [angleLow,angleHi]. Note the magnitude is usually per area per primary. The higher limit is \
-the next's lower limit. The last interval always contains no counts, \
-it is used to keep all this information."
+ImportDoubleBDX::usage = "ImportDoubleBDX[tabLisString] returns a list of detector data, each in the form \
+{angleMesh,energyMesh,data,error} from a Flair-produced file *_tab.lis which has been imported as string. 
+angleMesh is a list with m elements, each of them a pair descring the solid angle interval in sr.
+energyMesh is a list with n elements, each of them a pair descring the energy interval in GeV.
+data is a m x n matrix. The element (i,j) describes the mean magnitude (e.g., fluence) per GeV per sr in the\
+rectangle defined by angleMesh[[i]] x energyMesh[[j]].
+error is a m x n matrix with the relative errors of data in %."
 
 
 
