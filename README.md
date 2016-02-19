@@ -1,6 +1,5 @@
 # FLUKAmatica
 
-[![release v1.0.0](http://img.shields.io/badge/release-v0.1.0-red.svg)](https://github.com/dih5/FLUKAmatica/releases/latest)
 [![license MIT](https://img.shields.io/badge/license-MIT%20License-blue.svg)](https://github.com/dih5/FLUKAmatica/blob/master/LICENSE.txt)
 
 
@@ -19,7 +18,7 @@ Support for USRTRACK and singly-differential USRBDX detectors.
 Partial support for doubly-differential USRBDX detectors.
 
 ## Usage example
-Check the [demo notebook](https://raw.githubusercontent.com/Dih5/FLUKAmatica/master/FLUKAmatica/demo.nb.
+Check the [demo notebook](https://raw.githubusercontent.com/Dih5/FLUKAmatica/master/demo.nb) (Right-click to download).
 
 ## Installation
 
@@ -27,10 +26,10 @@ Check the [demo notebook](https://raw.githubusercontent.com/Dih5/FLUKAmatica/mas
 
 To use package directly from the Web, without installation, evaluate:
 ```Mathematica
-Get["https://raw.githubusercontent.com/Dih5/FLUKAmatica/master/FLUKAmatica/FLUKAmatica/FLUKAmatica.m"]
+Get["https://raw.githubusercontent.com/Dih5/FLUKAmatica/master/FLUKAmatica/FLUKAmatica.m"]
 ```
 
-Yes, the only pre-release installation method is the "no-installation" method. 
+Yes, the only pre-release available installation method is the "no-installation" method. :stuck_out_tongue_winking_eye:
 
 ## Documentation
 
@@ -43,12 +42,10 @@ Some help is available by means of usage message. Try for example
 
 
 
-
-
 ## License
 
 This package is released under
-[The MIT License](https://github.com/dih5/FLUKAmatica/master/LICENSE).
+[The MIT License](https://raw.githubusercontent.com/Dih5/FLUKAmatica/master/LICENSE.txt).
 
 
 
