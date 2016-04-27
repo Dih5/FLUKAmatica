@@ -5,7 +5,7 @@ Get["https://raw.githubusercontent.com/jkuczm/MathematicaBootstrapInstaller/v0.1
 
 BootstrapInstall[
 	"SyntaxAnnotations",
-	"https://github.com/dih5/FLUKAmatica/releases/download/v0.1.0/ErrorPlot.zip",
+	"https://github.com/dih5/FLUKAmatica/releases/download/v0.1.0/FLUKAmatica.zip",
 	"AdditionalFailureMessage" ->
 		Sequence[
 			"You can ",
